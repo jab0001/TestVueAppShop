@@ -1,7 +1,9 @@
 <template>
   <div class="cart">
     <router-link :to="{ name: 'catalog'}">
-      <div class="catalog__link-to-cart">Back to catalog</div>
+      <div class="catalog__link-to-cart">
+        <p>Back to catalog</p>
+      </div>
     </router-link>
     <p v-if="!cart_data.length">No products in cart</p>
     <CartItem
@@ -52,12 +54,12 @@ export default {
         });
         return result;
       } else {
-          return 0;
+        return 0;
       }
     }
   },
   methods: {
-    ...mapActions(["DELETE_FROM_CART", "DELETE_ONE_CART","INCREASE_ONE_CART"]),
+    ...mapActions(["DELETE_FROM_CART", "DELETE_ONE_CART", "INCREASE_ONE_CART"]),
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index);
     },
@@ -65,7 +67,7 @@ export default {
       this.DELETE_ONE_CART(index);
     },
     addOneCart(index) {
-        this.INCREASE_ONE_CART(index);
+      this.INCREASE_ONE_CART(index);
     }
   },
   watch: {},
@@ -73,5 +75,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.catalog__link-to-cart {
+  p {
+    margin: 0;
+  }
+}
 </style>

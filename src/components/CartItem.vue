@@ -15,15 +15,15 @@
       <p>Quantity:</p>
       <span>
         <span>
-          <button class="cartItem__btn" @click="addOneCart">+</button>
+          <button class="cartItem__btn btn" @click="addOneCart">+</button>
         </span>
         {{ cart_item_data.quantity }}
         <span>
-          <button class="cartItem__btn" @click="deleteOneCart">-</button>
+          <button class="cartItem__btn btn" @click="deleteOneCart">-</button>
         </span>
       </span>
     </div>
-    <button class="cartItem__btn" @click="deleteFromCart">remove</button>
+    <button class="cartItem__btn btn" @click="deleteFromCart">remove</button>
   </div>
 </template>
 
@@ -63,6 +63,12 @@ export default {
 
 <style lang="scss">
 .cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding * 2;
+  margin-bottom: $margin * 2;
+
   &__img {
     width: 100px;
   }
@@ -70,11 +76,5 @@ export default {
   &__btn {
     height: 50px;
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 8px 0 #e0e0e0;
-  padding: $padding * 2;
-  margin-bottom: $margin * 2;
 }
 </style>

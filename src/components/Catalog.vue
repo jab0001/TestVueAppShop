@@ -1,7 +1,7 @@
 <template>
   <div class="catalog">
     <router-link :to="{ name: 'cart', params: { cart_data: CART } }">
-      <div class="catalog__link-to-cart">Cart : {{ CART.length }}</div>
+      <div class="catalog__link-to-cart"><p>Cart : {{ CART.length }}</p></div>
     </router-link>
     <h1 class="catalog__title">Catalog</h1>
     <div class="catalog__list">
@@ -58,9 +58,18 @@ export default {
   }
 
   &__link-to-cart {
-    position: absolute;
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(238, 165, 165);
     top: 10px;
     right: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
   }
 }
 </style>

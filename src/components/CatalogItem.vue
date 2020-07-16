@@ -7,7 +7,7 @@
     />
     <p class="catalogItem__name">Name: {{ product_data.name }}</p>
     <p class="catalogItem__price">Price: {{ product_data.price }} rub</p>
-    <button class="catalogItem__button" 
+    <button class="catalogItem__button btn" 
         @click="addToCart">
             Add to Cart
     </button>
@@ -47,7 +47,8 @@ export default {
     width: 100px;
   }
   flex-basis: 25%;
-  box-shadow: 0 0 8px 0 #e0e0e0;
+  box-shadow: 0 0 8px 0 rgb(33, 144, 148);
+  border-radius: 35px;
   padding: $padding * 2;
   margin-bottom: $margin * 2;
 }
